@@ -2,11 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+import { DataProvider } from "./context";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <DataProvider>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </DataProvider>,
   document.getElementById("root")
 );
 

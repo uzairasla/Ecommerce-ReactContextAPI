@@ -1,8 +1,8 @@
 export const storeProducts = [
   {
     id: 1,
-    title: "Google Pixel - Black",
-    img: "img/product-1.png",
+    title: "ASUS ROG Zephyrus G ",
+    img: "https://c1.neweggimages.com/ProductImage/A7ABD200527UO74V.jpg",
     price: 10,
     company: "GOOGLE",
     info:
