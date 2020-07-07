@@ -8,22 +8,23 @@ const ProductContext = React.createContext();
 class DataProvider extends Component {
   state = {
     products: storeProducts,
-    productDetail: detailProduct,
+    productDetail: detailProduct
   };
   handleproductDetail = () => {};
 
   addtoCart = () => {};
   render() {
-    return;
+    return(
     <ProductContext.Provider
       value={{
         ...this.state,
-        handleDetail: this.handleproductDetail,
-        addtoCart: this.addtoCart,
+        //handleDetail: this.handleproductDetail,
+        //addtoCart: this.addtoCart
       }}
     >
       {this.props.children}
-    </ProductContext.Provider>;
+    </ProductContext.Provider>
+    );
   }
 }
 const ProductConsumer = ProductContext.Consumer;
