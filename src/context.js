@@ -7,23 +7,45 @@ import {
 const ProductContext = React.createContext();
 class DataProvider extends Component {
   state = {
-    products: storeProducts,
-    productDetail: detailProduct
+    products: [],
+    detailProduct: detailProduct,
   };
-  handleproductDetail = () => {};
+  componentDidMount() {
+    this.setProducts();
+  }
 
-  addtoCart = () => {};
+  setProducts = () => {
+    let products = [];
+    storeProducts.forEach((item) => {
+      const singleItem = { ...item };
+      products = [...products, singleItem];
+    });
+    this.setState(() => {
+      return { products };
+    });
+  };
+
+  getItem = (id) => {
+    const product = this.state.products.find((item) => item.id === id);
+    return product;
+  };
+  handleDetail = (id) => {
+    const product = this.getItem(id);
+    this.setState(() => {
+      return { detailProduct: product };
+    });
+  };
+
   render() {
-    return(
-    <ProductContext.Provider
-      value={{
-        ...this.state,
-        //handleDetail: this.handleproductDetail,
-        //addtoCart: this.addtoCart
-      }}
-    >
-      {this.props.children}
-    </ProductContext.Provider>
+    return (
+      <ProductContext.Provider
+        value={{
+          ...this.state,
+          handleDetail: this.handleDetail,
+        }}
+      >
+        {this.props.children}
+      </ProductContext.Provider>
     );
   }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { ProductConsumer } from "../../context";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 export default class product extends Component {
   render() {
     const { id, title, img, price, inCart } = this.props.product;
@@ -14,9 +14,9 @@ export default class product extends Component {
                   className="img-container p-5"
                   onClick={() => value.handleDetail(id)}
                 >
-                  <a href="/details">
+                  <Link to="/details">
                     <img src={img} alt="" className="card-img-top" />
-                  </a>
+                  </Link>
                   <button
                     className="cart-btn"
                     disabled={inCart ? true : false}
