@@ -18,13 +18,12 @@ nav {
   transition: all 1s linear;
 }
 .card:hover {
-  
-    border: 0.04rem solid rgba(0, 0, 0, 0.2);
-    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
-  }
-  .card-footer:hover {
-    background: rgba(247, 247, 247);
-  }
+  border: 0.04rem solid rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
+}
+.card-footer:hover {
+  background: rgba(247, 247, 247);
+}
 
 .img-container {
   position: relative;
@@ -51,6 +50,22 @@ nav {
   transform: translate(0, 0);
 }
 .cart-btn:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 /* end shopping cards styling including buttons and hover properties */
+
+/* modal container styling */
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#modal {
+  background: var(--mainWhite);
+}

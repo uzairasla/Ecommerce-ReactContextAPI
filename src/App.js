@@ -6,6 +6,7 @@ import Info from "./components/info";
 import ProductList from "./components/product/productlist";
 import { Switch, Route } from "react-router-dom";
 import Productinfo from "./components/product/productinfo";
+import About from "./components/about";
 function App() {
   return (
     <div>
@@ -23,6 +24,7 @@ function App() {
           )}
         />
         <Route exact path="/details" component={Productinfo} />
+        <Route path="/about" component={About} />
       </Switch>
     </div>
   );
